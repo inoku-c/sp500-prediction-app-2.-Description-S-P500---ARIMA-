@@ -61,7 +61,16 @@ GitHubリポジトリで：
 ```
    railway.json
 
-
+{
+     "$schema": "https://railway.app/railway.schema.json",
+     "build": {
+       "builder": "NIXPACKS"
+     },
+     "deploy": {
+       "startCommand": "streamlit run app.py --server.port $PORT --server.address 0.0.0.0",
+       "staticPublishPath": "public"
+     }
+   }
 
 
 
@@ -541,5 +550,6 @@ if st.sidebar.button("プライバシーポリシー"):
     投資助言や金融商品の勧誘ではありません。
     投資判断はご自身の責任で行ってください。
     """)
+
 
 
