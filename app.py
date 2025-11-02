@@ -1,4 +1,12 @@
 import streamlit as st
+
+# Google AdSense所有権確認用メタタグ
+st.markdown("""
+<head>
+<meta name="google-adsense-account" content="ca-pub-3111648833499320">
+</head>
+""", unsafe_allow_html=True)
+
 import pandas as pd
 import numpy as np
 from statsmodels.tsa.arima.model import ARIMA
@@ -482,3 +490,4 @@ if st.sidebar.button("プライバシーポリシー"):
     投資助言や金融商品の勧誘ではありません。
     投資判断はご自身の責任で行ってください。
     """)
+
