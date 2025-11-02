@@ -16,6 +16,57 @@ import requests
 import warnings
 warnings.filterwarnings('ignore')
 
+
+
+
+import streamlit as st
+import pandas as pd
+import numpy as np
+from statsmodels.tsa.arima.model import ARIMA
+import plotly.graph_objects as go
+from datetime import datetime, timedelta
+import requests
+import warnings
+warnings.filterwarnings('ignore')
+
+# ads.txt配信用の処理（一番最初に実行）
+import os
+if os.environ.get('REQUEST_URI') == '/ads.txt':
+    print("google.com, pub-3111648833493920, DIRECT, f08c47fec0942fa0")
+    import sys
+    sys.exit(0)
+
+# ページ設定
+st.set_page_config(
+    page_title="S&P500翌日予測アプリ",
+    page_icon="📈",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
+```
+
+---
+
+## 🔄 別の確実な方法：Railway で静的ファイルを配信
+
+実は、より確実な方法があります。**Railwayの設定でNginxを使う**方法です。
+
+### **方法：railway.json を作成**
+
+GitHubリポジトリで：
+
+1. **「Add file」** → **「Create new file」**
+
+2. ファイル名:
+```
+   railway.json
+
+
+
+
+
+
+
 # ページ設定
 st.set_page_config(page_title="S&P500翌日予測", layout="wide")
 
@@ -490,4 +541,5 @@ if st.sidebar.button("プライバシーポリシー"):
     投資助言や金融商品の勧誘ではありません。
     投資判断はご自身の責任で行ってください。
     """)
+
 
